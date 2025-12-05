@@ -14,7 +14,7 @@ function Profile() {
           <p>
             Starshield Security provides two-factor authentication protection for websites
             that don't natively support it. Add an extra layer of security to
-            your favorite websites with our easy-to-use service.
+            your favorite websites with our easy-to-use security management service.
           </p>
         </div>
 
