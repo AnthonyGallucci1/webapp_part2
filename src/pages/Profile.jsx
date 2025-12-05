@@ -21,18 +21,9 @@ function Profile() {
         <div className="profile-section">
           <h2>Team</h2>
           <ul className="team-list">
-            <li>
-              <div className="team-avatar">AG</div>
-              <span>Anthony Gallucci</span>
-            </li>
-            <li>
-              <div className="team-avatar">NM</div>
-              <span>Naomi Murai</span>
-            </li>
-            <li>
-              <div className="team-avatar">DC</div>
-              <span>Dang Huy Cao</span>
-            </li>
+            <li>Anthony Gallucci</li>
+            <li>Naomi Murai</li>
+            <li>Dang Huy Cao</li>
           </ul>
         </div>
 
