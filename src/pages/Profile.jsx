@@ -1,74 +1,37 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import './Profile.css';
 
 function Profile() {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const fetchProfile = async () => {
-      try {
-        const token = localStorage.getItem('token');
-        if (!token) {
-          navigate('/signin');
-          return;
-        }
-
-        // Decode token to get user info (basic decode)
-        const base64Url = token.split('.')[1];
-        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-        const payload = JSON.parse(window.atob(base64));
-
-        setUser({ id: payload.user.id });
-      } catch (err) {
-        console.error('Error loading profile:', err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProfile();
-  }, [navigate]);
-
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    navigate('/');
-  };
-
-  if (loading) {
-    return (
-      <div className="profile-container">
-        <div className="loading">Loading...</div>
-      </div>
-    );
-  }
-
   return (
-    <main className="profile-container" id="main-content" role="main">
-      <div className="profile-card" role="region" aria-labelledby="profile-title">
-        <div className="profile-avatar" aria-hidden="true">
-          <span>U</span>
-        </div>
-        <h1 id="profile-title">My Profile</h1>
+    <div className="profile-container">
+      <div className="profile-card">
+        <h1>Starshield Security</h1>
+        <p className="tagline">Secure Authentication for Every Website</p>
 
-        <div className="profile-info">
-          <div className="info-item">
-            <span className="info-label">User ID</span>
-            <span className="info-value">{user?.id || 'N/A'}</span>
-          </div>
-          <div className="info-item">
-            <span className="info-label">Account Status</span>
-            <span className="info-value status-active">Active</span>
-          </div>
+        <div className="profile-section">
+          <h2>About This Project</h2>
+          <p>
+            Starshield Security provides two-factor authentication protection for websites
+            that don't natively support it. Add an extra layer of security to
+            your favorite websites with our easy-to-use service.
+          </p>
         </div>
 
-        <button onClick={handleLogout} className="btn btn-logout" aria-label="Sign out of your account">
-          Sign Out
-        </button>
+        <div className="profile-section">
+          <h2>Team</h2>
+          <ul className="team-list">
+            <li>Anthony Gallucci</li>
+            <li>Naomi Murai</li>
+            <li>Dang Huy Cao</li>
+          </ul>
+        </div>
+
+        <div className="profile-actions">
+          <Link to="/websites" className="btn btn-primary">Manage Websites</Link>
+        </div>
       </div>
-    </main>
+    </div>
   );
 }
 

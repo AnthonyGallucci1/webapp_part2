@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 require('dotenv').config();  // Move this to line 1!
+=======
+>>>>>>> development
 const express = require('express');
 const connectDB = require('./config/db');
 const cors = require('cors');
 const morgan = require('morgan');
 const path = require('path');
+<<<<<<< HEAD
+=======
+require('dotenv').config();
+>>>>>>> development
 
 const app = express();
 
@@ -18,6 +25,7 @@ app.use(morgan('dev'));
 // Define Routes
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/websites', require('./routes/websiteRoutes'));
+<<<<<<< HEAD
 
 // Serve static files from the React build folder
 app.use(express.static(path.join(__dirname, 'build')));
@@ -30,3 +38,20 @@ app.get('/{*splat}', (req, res) => {
 const PORT = process.env.SERVER_PORT || 5000;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+=======
+app.use('/api/items', require('./routes/websiteRoutes')); // Alias for frontend compatibility
+
+// Serve static assets in production
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('build'));
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+    });
+}
+
+const PORT = process.env.SERVER_PORT || 5002;
+
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+
+
+>>>>>>> development
