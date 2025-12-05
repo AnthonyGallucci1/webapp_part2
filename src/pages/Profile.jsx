@@ -14,16 +14,25 @@ function Profile() {
           <p>
             Starshield Security provides two-factor authentication protection for websites
             that don't natively support it. Add an extra layer of security to
-            your favorite websites with our easy-to-use service.
+            your favorite websites with our easy-to-use security management service.
           </p>
         </div>
 
         <div className="profile-section">
           <h2>Team</h2>
           <ul className="team-list">
-            <li>Anthony Gallucci</li>
-            <li>Naomi Murai</li>
-            <li>Dang Huy Cao</li>
+            <li>
+              <div className="team-avatar">AG</div>
+              <span>Anthony Gallucci</span>
+            </li>
+            <li>
+              <div className="team-avatar">NM</div>
+              <span>Naomi Murai</span>
+            </li>
+            <li>
+              <div className="team-avatar">DC</div>
+              <span>Dang Huy Cao</span>
+            </li>
           </ul>
         </div>
 
