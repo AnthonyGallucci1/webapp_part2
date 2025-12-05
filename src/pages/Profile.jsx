@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import './Profile.css';
 
 function Profile() {
@@ -47,12 +46,12 @@ function Profile() {
   }
 
   return (
-    <div className="profile-container">
-      <div className="profile-card">
-        <div className="profile-avatar">
+    <main className="profile-container" id="main-content" role="main">
+      <div className="profile-card" role="region" aria-labelledby="profile-title">
+        <div className="profile-avatar" aria-hidden="true">
           <span>U</span>
         </div>
-        <h2>My Profile</h2>
+        <h1 id="profile-title">My Profile</h1>
 
         <div className="profile-info">
           <div className="info-item">
@@ -65,11 +64,11 @@ function Profile() {
           </div>
         </div>
 
-        <button onClick={handleLogout} className="btn btn-logout">
+        <button onClick={handleLogout} className="btn btn-logout" aria-label="Sign out of your account">
           Sign Out
         </button>
       </div>
-    </div>
+    </main>
   );
 }
 

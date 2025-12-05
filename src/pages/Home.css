@@ -56,6 +56,11 @@
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
+.btn-hero:focus {
+  outline: 3px solid white;
+  outline-offset: 2px;
+}
+
 .btn-hero-secondary {
   background: transparent;
   color: white;
@@ -64,6 +69,11 @@
 
 .btn-hero-secondary:hover {
   background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-hero-secondary:focus {
+  outline: 3px solid white;
+  outline-offset: 2px;
 }
 
 .features {

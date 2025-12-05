@@ -30,7 +30,7 @@
   color: white;
 }
 
-.profile-card h2 {
+.profile-card h1 {
   margin-bottom: 30px;
   font-size: 1.8rem;
   color: #333;
@@ -81,6 +81,11 @@
 .btn-logout:hover {
   background: #dc3545;
   color: white;
+}
+
+.btn-logout:focus {
+  outline: 2px solid #dc3545;
+  outline-offset: 2px;
 }
 
 .loading {

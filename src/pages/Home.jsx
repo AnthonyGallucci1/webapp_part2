@@ -6,7 +6,7 @@ function Home() {
   const token = localStorage.getItem('token');
 
   return (
-    <main className="home-container" role="main">
+    <main className="home-container" role="main" id="main-content">
       <section className="hero" aria-labelledby="hero-title">
         <h1 id="hero-title">Protect Your Websites with Starshield Security</h1>
         <p className="hero-subtitle">

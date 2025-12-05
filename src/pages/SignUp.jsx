@@ -110,7 +110,12 @@ function SignUp() {
             />
           </div>
 
-          <button type="submit" className="btn btn-primary" disabled={loading}>
+          <button
+            type="submit"
+            className="btn btn-primary"
+            disabled={loading}
+            aria-busy={loading}
+          >
             {loading ? 'Creating Account...' : 'Sign Up'}
           </button>
         </form>
@@ -119,7 +124,7 @@ function SignUp() {
           Already have an account? <Link to="/signin">Sign In</Link>
         </p>
       </div>
-    </div>
+    </main>
   );
 }
 

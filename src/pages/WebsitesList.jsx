@@ -73,15 +73,15 @@ function WebsitesList() {
   }
 
   return (
-    <div className="websites-container">
+    <main className="websites-container" id="main-content" role="main">
       <div className="websites-header">
         <h1>My Protected Websites</h1>
-        <Link to="/websites/new" className="btn-add">
+        <Link to="/websites/new" className="btn-add" aria-label="Add a new website">
           + Add Website
         </Link>
       </div>
 
-      {error && <div className="error-message">{error}</div>}
+      {error && <div className="error-message" role="alert" aria-live="polite">{error}</div>}
 
       {websites.length === 0 ? (
         <div className="empty-state">
@@ -114,18 +114,20 @@ function WebsitesList() {
                   <button
                     className={`status-toggle ${website.isProtected ? 'active' : ''}`}
                     onClick={() => toggleProtection(website._id, website.isProtected)}
+                    aria-label={`${website.isProtected ? 'Disable' : 'Enable'} 2FA protection for ${website.name}`}
                   >
                     {website.isProtected ? 'Disable' : 'Enable'}
                   </button>
                 </div>
 
                 <div className="website-actions">
-                  <Link to={`/websites/edit/${website._id}`} className="btn-edit">
+                  <Link to={`/websites/edit/${website._id}`} className="btn-edit" aria-label={`Edit ${website.name}`}>
                     Edit
                   </Link>
                   <button
                     onClick={() => handleDelete(website._id)}
                     className="btn-delete"
+                    aria-label={`Remove ${website.name}`}
                   >
                     Remove
                   </button>
@@ -135,7 +137,7 @@ function WebsitesList() {
           ))}
         </div>
       )}
-    </div>
+    </main>
   );
 }
 
